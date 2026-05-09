@@ -1,0 +1,4 @@
+Flask
+load_dotenv
+os
+pymongo
