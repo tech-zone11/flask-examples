@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            width: 1080px;
+            margin: 50px auto;
+            text-align: center;
+            font-size: 18px;
+        }
+        form {
+            width: 295px;
+            text-align: left;
+            border: 1px solid #ccc;
+            padding: 10px 20px 20px;
+            margin: 50px auto;
+        }
+        input {
+            margin-bottom: 20px;
+            padding: 10px 12px;
+        }
+        button {
+            padding: 10px 15px;
+            margin-left: 75px;
+            background-color: #24A0ED;
+            border: 0;
+        }
+        .mr-25 {
+            margin-right: 25px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hi! Welcome to Sign Up Page</h2>
+    <div>Date & Time: {{ day_of_week }}, {{ current_time }}</div>
+
+    <form action="/submit" method="post">
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <label for="name" class="mr-25">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name"/>
+        
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter your Password"/>
+       
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
