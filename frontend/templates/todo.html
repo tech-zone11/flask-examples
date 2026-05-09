@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            width: 1080px;            
+            text-align: center;
+            font-size: 18px;
+        }
+        .todo-section {
+            text-align: left;
+            width: 400px;
+            margin: 50px auto;
+            padding: 10px 20px 20px;
+        }
+        form {
+            text-align: left;            
+            margin: 50px auto;
+        }
+        label {
+            width: 100px;
+            display: inline-block;
+        }
+        input {
+            margin-bottom: 20px;
+            padding: 10px 12px;
+        }
+        button {
+            padding: 10px 15px;
+            margin-left: 105px;
+            background-color: #24A0ED;
+            border: 0;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h2>ToDo Page</h2>
+    
+    <div class="todo-section">
+        <p>Enter name and description of your to-do item:</p>
+
+        <form action="/saveTodo" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter name"/>
+        <br/>
+        <label for="description">Description</label>
+        <input type="text" id="description" placeholder="Enter description"/>
+       
+        <button type="submit">Add</button>
+    </form>
+    </div>
+    
+</body>
+</html>
