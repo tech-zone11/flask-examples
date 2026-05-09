@@ -49,5 +49,18 @@ def view():
     except errors.OperationFailure:
         return 'error'
 
+@app.route('/submittodoitem', methods=['POST'])
+def submittodoitem():
+    form_data = dict(request.json)
+    try:
+        result = collection.insert_one(form_data)
+        if result.acknowledged:
+            return 'Todo Item Added Successfully!'
+        
+    except errors.PyMongoError:
+        raise Exception("Something went wrong!")
+    except errors.OperationFailure:
+        raise Exception("Something went wrong!")
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1',port=9000,debug=True)
