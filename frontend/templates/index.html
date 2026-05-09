@@ -10,17 +10,23 @@
         body {
             background: #000;
             color: #fff;
-            width: 1080px;
-            margin: 50px auto;
+            width: 1080px;            
             text-align: center;
             font-size: 18px;
         }
-        form {
-            width: 295px;
+        .todo-section {
             text-align: left;
-            border: 1px solid #ccc;
-            padding: 10px 20px 20px;
+            width: 400px;
             margin: 50px auto;
+            padding: 10px 20px 20px;
+        }
+        form {
+            text-align: left;            
+            margin: 50px auto;
+        }
+        label {
+            width: 100px;
+            display: inline-block;
         }
         input {
             margin-bottom: 20px;
@@ -28,35 +34,29 @@
         }
         button {
             padding: 10px 15px;
-            margin-left: 75px;
+            margin-left: 105px;
             background-color: #24A0ED;
             border: 0;
-        }
-        .mr-25 {
-            margin-right: 25px;
-        }
-        .error {
-            color: red;
-            font-size: 14px;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <h2>Hi! Welcome to Sign Up Page</h2>
-    <div>Date & Time: {{ day_of_week }}, {{ current_time }}</div>
+    <h2>ToDo Page</h2>
+    
+    <div class="todo-section">
+        <p>Enter name and description of your to-do item:</p>
 
-    <form action="/submit" method="post">
-        {% if error %}
-            <p class="error">{{ error }}</p>
-        {% endif %}
-
-        <label for="name" class="mr-25">Name</label>
-        <input type="text" name="name" id="name" placeholder="Enter your name"/>
-        
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="Enter your Password"/>
+        <form action="/submittodoitem" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter name"/>
+        <br/>
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" placeholder="Enter description"/>
        
-        <button type="submit">Submit</button>
+        <button type="submit">Add</button>
     </form>
+    </div>
+    
 </body>
 </html>
